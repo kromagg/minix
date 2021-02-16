@@ -506,7 +506,7 @@ static int do_sync_ipc(struct proc * caller_ptr, /* who made the call */
   {
 	if (call_nr != RECEIVE)
 	{
-#if 0
+#if DEBUG_ENABLE_IPC_WARNINGS
 		printf("sys_call: %s by %d with bad endpoint %d\n", 
 			callname,
 			proc_nr(caller_ptr), src_dst_e);
@@ -519,7 +519,7 @@ static int do_sync_ipc(struct proc * caller_ptr, /* who made the call */
   {
 	/* Require a valid source and/or destination process. */
 	if(!isokendpt(src_dst_e, &src_dst_p)) {
-#if 0
+#if DEBUG_ENABLE_IPC_WARNINGS
 		printf("sys_call: %s by %d with bad endpoint %d\n", 
 			callname,
 			proc_nr(caller_ptr), src_dst_e);
